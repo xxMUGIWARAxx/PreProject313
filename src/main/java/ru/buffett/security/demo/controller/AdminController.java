@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ru.buffett.security.demo.service.UserService;
 import ru.buffett.security.demo.model.User;
 import ru.buffett.security.demo.service.RoleService;
-import ru.buffett.security.demo.service.UserService;
 
 import java.security.Principal;
 

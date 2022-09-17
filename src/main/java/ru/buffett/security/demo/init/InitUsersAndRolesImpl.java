@@ -2,10 +2,10 @@ package ru.buffett.security.demo.init;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import ru.buffett.security.demo.service.UserService;
 import ru.buffett.security.demo.model.Role;
 import ru.buffett.security.demo.model.User;
 import ru.buffett.security.demo.repository.RoleRepository;
-import ru.buffett.security.demo.service.UserService;
 
 import javax.annotation.PostConstruct;
 import java.util.HashSet;
