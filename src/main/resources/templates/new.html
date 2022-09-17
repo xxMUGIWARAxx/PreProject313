@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new user</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+
+<header>
+    <nav class="navbar navbar-dark bg-dark" align="left">
+        <div class="navbar-brand">
+            <font color="white">
+                <b th:text="${admin.getUsername()}"></b>
+                <span> with Role: </span>
+                <span th:each="role : ${admin.getRoles}">
+        <span th:text="${role}"></span>
+      </span>
+            </font>
+
+        </div>
+        <font color="silver" align="right">
+            <a href="/login"><font color="silver">Logout</font></a>
+        </font>
+    </nav>
+</header>
+
+
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="list-group row step">
+                    <a th:href="@{/}" class="list-group-item list-group-item-action active">
+                        Admin
+                    </a>
+                    <a th:href="@{/user}" class="list-group-item list-group-item-action">
+                        User
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-10 min-vh-100 bg-light step">
+
+
+                <h1><b>Admin panel</b></h1>
+
+                <div class="tab-content" id="tabContent">
+
+                    <ul class="nav nav-tabs">
+                        <a class="nav-link" data-toggle="tab" href="/">Users Table</a>
+                        <a class="nav-link active" data-toggle="tab">New User</a>
+                    </ul>
+
+                    <div class="d-flex flex-column bd-highlight mb-3">
+                        <div class="card">
+                            <h4 class="card-header"><b>Add new User</b></h4>
+                        </div>
+
+                        <div class="col-md bg-white border">
+
+                            <div class="col-lg-6 col-md-6 container justify-content-center">
+                                <div class="card-body">
+
+                                    <div class="row justify-content-center text-center">
+                                        <form th:action="@{/}" th:object="${user}" method="post">
+
+                                            <div class="align-self-center">
+                                                <div class="form-group">
+                                                    <label>Name</label>
+                                                    <input
+                                                            type="text"
+                                                            name="name"
+                                                            class="form-control"
+                                                            value=""
+                                                            placeholder="first name..."/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Last Name</label>
+                                                    <input
+                                                            type="text"
+                                                            name="lastName"
+                                                            class="form-control"
+                                                            value=""
+                                                            placeholder="last name..."/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Username</label>
+                                                    <input
+                                                            type="text"
+                                                            name="username"
+                                                            class="form-control"
+                                                            value=""
+                                                            placeholder="username..."/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                <label>Password</label>
+                                                <input
+                                                        type="text"
+                                                        name="password"
+                                                        class="form-control"
+                                                        value=""
+                                                        placeholder="password..."/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                <label>Age</label>
+                                                <input
+                                                        type="number"
+                                                        name="age"
+                                                        class="form-control"
+                                                        value=""
+                                                        placeholder="age..."/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                <label>Email</label>
+                                                <input
+                                                        type="text"
+                                                        name="email"
+                                                        class="form-control"
+                                                        value=""
+                                                        placeholder="email..."/>
+                                                </div>
+
+                                                <label for="role">Role:</label>
+                                                <select class="form-control" multiple="multiple" th:field="*{roles}"
+                                                        type="text" id="role" size="2">
+                                                    <option th:each="role : ${roles}" th:value="${role.id}"
+                                                            th:text="${role}"></option>
+
+                                                </select>
+                                            </div>
+                                            <br/>
+                                            <div class="box-footer">
+                                                <button type="submit" class="btn btn-success">
+                                                    Add user
+                                                </button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
+
+
+</body>
+</html>
