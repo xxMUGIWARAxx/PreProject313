@@ -1,12 +1,11 @@
-package ru.kata.spring.boot_security.demo.init;
+package ru.buffett.security.demo.init;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.kata.spring.boot_security.demo.model.Role;
-import ru.kata.spring.boot_security.demo.model.User;
-import ru.kata.spring.boot_security.demo.repository.RoleRepository;
-import ru.kata.spring.boot_security.demo.service.UserService;
+import ru.buffett.security.demo.model.Role;
+import ru.buffett.security.demo.model.User;
+import ru.buffett.security.demo.repository.RoleRepository;
+import ru.buffett.security.demo.service.UserService;
 
 import javax.annotation.PostConstruct;
 import java.util.HashSet;

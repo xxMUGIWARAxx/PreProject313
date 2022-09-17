@@ -1,4 +1,4 @@
-package ru.kata.spring.boot_security.demo.model;
+package ru.buffett.security.demo.model;
 
 import lombok.*;
 import org.hibernate.annotations.Fetch;

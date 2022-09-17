@@ -1,10 +1,9 @@
-package ru.kata.spring.boot_security.demo.service;
+package ru.buffett.security.demo.service;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.kata.spring.boot_security.demo.model.Role;
-import ru.kata.spring.boot_security.demo.repository.RoleRepository;
+import ru.buffett.security.demo.model.Role;
+import ru.buffett.security.demo.repository.RoleRepository;
 
 import java.util.HashSet;
 import java.util.List;

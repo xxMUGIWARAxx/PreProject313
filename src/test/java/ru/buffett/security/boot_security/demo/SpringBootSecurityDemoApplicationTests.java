@@ -1,4 +1,4 @@
-package ru.kata.spring.boot_security.demo;
+package ru.buffett.security.boot_security.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

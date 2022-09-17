@@ -1,15 +1,13 @@
-package ru.kata.spring.boot_security.demo.service;
+package ru.buffett.security.demo.service;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.kata.spring.boot_security.demo.model.User;
-import ru.kata.spring.boot_security.demo.repository.RoleRepository;
-import ru.kata.spring.boot_security.demo.repository.UserRepository;
+import ru.buffett.security.demo.model.User;
+import ru.buffett.security.demo.repository.UserRepository;
 
 import java.util.List;
 

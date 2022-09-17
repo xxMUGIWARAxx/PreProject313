@@ -1,4 +1,4 @@
-package ru.kata.spring.boot_security.demo.init;
+package ru.buffett.security.demo.init;
 
 public interface InitUsersAndRoles {
 
