@@ -1,0 +1,51 @@
+body {
+    background-color: #ffe9a7;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding: 30px;
+    color: #2e1f09;
+}
+
+h1 {
+    font-size: 32px;
+    color: #cc0000;
+    text-align: center;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+.card {
+    background: #fff8dc;
+    border: 2px dashed #cc6600;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+}
+
+button, a.btn {
+    padding: 8px 14px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+}
+
+.btn-danger {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #4da6ff;
+    color: white;
+}
+
+.btn-success {
+    background-color: #66cc66;
+    color: white;
+}
+
+a:hover, button:hover {
+    box-shadow: 0 0 6px #333;
+    cursor: pointer;
+}
