@@ -7,14 +7,11 @@ import jakarta.persistence.*;
 @Table(name = "User")
 public class User {
     @Id
-    @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "email")
     private String email;
 
     public User(String name, String email) {

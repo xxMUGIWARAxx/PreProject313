@@ -25,12 +25,6 @@ public class UsersController {
         return "users";
     }
 
-    @GetMapping(params = "count")
-    public String printUsers(@RequestParam("count") int count, ModelMap model) {
-        model.addAttribute("messages", userService.show(count));
-        return "users";
-    }
-
     @GetMapping("/new")
     public String newUser(@ModelAttribute("user") User user) {
         return "new";

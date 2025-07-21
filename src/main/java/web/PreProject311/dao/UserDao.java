@@ -1,11 +1,10 @@
-package web.PreProject311.service;
-
+package web.PreProject311.dao;
 
 import web.PreProject311.model.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserDao {
     List<User> index();
 
     User show(int id);
