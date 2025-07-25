@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Update person</title>
+    <title>Edit User</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<form th:method="PATCH" th:action="@{/users/edit(id=${user.getId()})}" th:object="${user}">
-    <label for="name">Enter name:</label>
-    <input type="text" th:field="*{name}" id="name"/>
+<form th:action="@{/admin/users/{id}(id=${user.id})}"
+      th:object="${user}"
+      th:method="patch">
+
+    <label>Name:
+        <input type="text" th:field="*{name}" />
+    </label><br/>
+
+    <label>Email:
+        <input type="email" th:field="*{email}" />
+    </label><br/>
+
+    <label for="password">Password:</label>
+    <input type="password" th:field="*{password}" id="password"/>
     <br/>
-    <label for="mail">Enter mail:</label>
-    <input type="text" th:field="*{email}" id="mail"/>
+
+    <label>Roles:</label>
+    <select th:field="*{roles}" multiple>
+        <option th:each="r : ${allRoles}"
+                th:value="${r.id}"
+                th:text="${r.role}">
+        </option>
+    </select>
     <br/>
-    <input type="submit" value="Update!">
+
+    <button type="submit">Update!</button>
 </form>
+
+<a th:href="@{/admin/users}">Back to list</a>
 </body>
 </html>

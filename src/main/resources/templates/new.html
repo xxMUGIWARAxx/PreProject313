@@ -7,14 +7,25 @@
 </head>
 <body>
 
-<form th:method="POST" th:action="@{/users}" th:object="${user}">
-    <label for="name">Enter name:</label>
-    <input type="text" th:field="*{name}" id="name"/>
+<form th:action="@{/admin/users}"
+      th:object="${user}"
+      th:method="post">
+
+    <label>Name: <input type="text" th:field="*{name}"/></label><br/>
+    <label>Email: <input type="email" th:field="*{email}"/></label><br/>
+    <label for="password">Password:</label>
+    <input type="password" th:field="*{password}" id="password"/>
     <br/>
-    <label for="mail">Enter mail:</label>
-    <input type="text" th:field="*{email}" id="mail"/>
+    <label>Roles:</label>
+    <select th:field="*{roles}" multiple>
+        <option th:each="r : ${allRoles}"
+                th:value="${r.id}"
+                th:text="${r.role}">ROLE</option>
+    </select>
     <br/>
-    <input type="submit" value="Create!">
+
+    <button type="submit">Create!</button>
 </form>
+<a th:href="@{/logout}">Exit</a>
 </body>
 </html>

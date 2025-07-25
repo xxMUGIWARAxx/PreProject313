@@ -10,15 +10,17 @@
     <div>
         <p>Name: <span th:text="${user.name}"></span></p>
         <p>Email: <span th:text="${user.email}"></span></p>
-        <a th:href="@{/users/edit(id=${user.id})}">Edit</a>
-
-        <form th:method="DELETE" th:action="@{/users(id=${user.id})}">
-            <input type="submit" value="Delete"/>
+        <a th:href="@{/admin/users/{id}/edit(id=${user.id})}">Edit</a>
+        <form th:action="@{/admin/users/{id}(id=${user.id})}"
+              th:method="delete">
+            <button type="submit">Delete</button>
         </form>
     </div>
     <hr/>
 </th:block>
 
-<a href="/users/new">Create new person</a>
+<a href="/admin/users/new">Create new person</a>
+<br/>
+<a th:href="@{/logout}">Exit</a>
 </body>
 </html>
