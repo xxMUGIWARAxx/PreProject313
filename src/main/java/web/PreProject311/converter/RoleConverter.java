@@ -16,7 +16,6 @@ public class RoleConverter implements Converter<String, Role> {
 
     @Override
     public Role convert(String source) {
-        // source — это строка из <option value="...">
         Long id = Long.parseLong(source);
         return roleRepo.findById(id)
                 .orElseThrow(() ->

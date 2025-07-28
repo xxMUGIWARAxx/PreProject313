@@ -3,7 +3,6 @@ package web.PreProject311.config;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import web.PreProject311.model.Role;
 import web.PreProject311.model.User;
 import web.PreProject311.repositories.RoleRepository;
