@@ -36,6 +36,16 @@ public class AdminController {
         return "admin";
     }
 
+    @GetMapping("/adminUser")
+    public String userAdminPage(Principal principal, Model model) {
+        String username = principal.getName();
+        User current = (User) userService.loadUserByUsername(username);
+        model.addAttribute("currentUser", current);
+        model.addAttribute("users", userService.index());
+        model.addAttribute("allRoles", roleRepository.findAll());
+        return "adminUser";
+    }
+
     @GetMapping("/users")
     public String allUsers(ModelMap model) {
         model.addAttribute("messages", userService.index());

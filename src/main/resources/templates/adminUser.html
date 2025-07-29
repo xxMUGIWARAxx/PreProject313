@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:inline="html">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Навбар -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">
+            <span th:text="${currentUser.email}"></span> with roles: <span th:text="${currentUser.roles}"></span>
+        </span>
+        <a th:href="@{/logout}" class="btn btn-outline-light">Logout</a>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-2 bg-light vh-100 pt-3">
+            <ul class="list-group">
+                <li class="list-group-item"><a th:href="@{/admin}" class="text-decoration-none">Admin</a></li>
+                <li class="list-group-item active">User</li>
+            </ul>
+
+
+        </div>
+
+        <!-- Контент -->
+        <div class="col-md-10 pt-4">
+            <h2 class="mb-4 fw-bold">User information page</h2>
+
+            <div class="card">
+                <div class="card-header fs-4 fw-normal">
+                    About user
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-bordered mb-0">
+                            <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td th:text="${currentUser.id}">1</td>
+                                <td th:text="${currentUser.name}">Name</td>
+                                <td th:text="${currentUser.email}">email@example.com</td>
+                                <td>
+                                    <span th:each="role : ${currentUser.roles}"
+                                          th:text="${#strings.capitalize(#strings.replace(role.role, 'ROLE_', ''))}"
+                                          class="me-2">
+                                    </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
