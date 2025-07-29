@@ -34,8 +34,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     @Transactional(readOnly = true)
     public User show(Long id) {
-        Optional<User> foundPerson = userRepository.findById(id);
-        return foundPerson.orElse(null);
+        return userRepository.findById(id).orElseThrow();
     }
 
     @Override
