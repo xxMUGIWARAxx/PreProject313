@@ -1,15 +1,17 @@
 package web.PreProject311.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import web.PreProject311.model.User;
 import web.PreProject311.service.UserService;
 
 import java.security.Principal;
 
-@Controller
+@RestController
+@RequestMapping("/api/user")
 public class UserController {
     private final UserService userService;
 
@@ -19,11 +21,10 @@ public class UserController {
     }
 
 
-    @GetMapping("/user")
-    public String userPage(Principal principal, Model model) {
+    @GetMapping("/profile")
+    public ResponseEntity<User> getUserProfile(Principal principal) {
         String username = principal.getName();
         User current = (User) userService.loadUserByUsername(username);
-        model.addAttribute("user", current);
-        return "user";
+        return ResponseEntity.ok(current);
     }
 }

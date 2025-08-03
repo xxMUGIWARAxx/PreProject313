@@ -12,7 +12,6 @@ import web.PreProject311.model.User;
 import web.PreProject311.repositories.UserRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
